@@ -16,7 +16,8 @@ Everything you need to interact with is in the Assets folder. Inside are a few s
 
 Please make sure to sign your scripts so if something breaks we know who to reach out to (just a comment near the top with your name will do). If you need to change anything you didn't make, just message the Slack first.
 
-MAKE SURE TO PULL FROM THE REPOSITORY EVERYTIME YOU START WORKING OR YOU WILL HAVE A BAD TIME
+**MAKE SURE TO PULL FROM THE REPOSITORY EVERYTIME YOU START WORKING OR YOU WILL HAVE A BAD TIME**
+
 (Just hit the pull button in the Github window)
 
 I think that's just about everything so have fun! Again, just message me anytime if you need help with anything. 
