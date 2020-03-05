@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour, IInteractable
 {
     private string scene;
+    Animator camAnimator;
+
+    private void Start() {
+        camAnimator = FindObjectOfType<FirstPersonAIO>().GetComponent<Animator>();
+    }
 
     public void setScene(string scene) {
         this.scene = scene;
@@ -17,6 +22,7 @@ public class SceneLoader : MonoBehaviour, IInteractable
     }
 
     public void OnInteract() {
+        camAnimator.Play("CameraFade");
         GetComponent<Animator>().Play("DoorOpen");
 
     }
