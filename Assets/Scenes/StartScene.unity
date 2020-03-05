@@ -279,8 +279,6 @@ MonoBehaviour:
   scenes:
   - {fileID: 102900000, guid: 5a679b5a8ff5f8849b5f93c14c3d1742, type: 3}
   - {fileID: 102900000, guid: 705336a720985d64fa9db6508f8e8bc6, type: 3}
-  - {fileID: 102900000, guid: 41faaed7178204541932924247f5aba0, type: 3}
-  - {fileID: 102900000, guid: 9772d53e622074274ab78bc6aed3d773, type: 3}
 --- !u!4 &797906090
 Transform:
   m_ObjectHideFlags: 0
@@ -414,6 +412,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4448068258976056, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82712217391461128, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
+        type: 3}
+      propertyPath: BypassReverbZones
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

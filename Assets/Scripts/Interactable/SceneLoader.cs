@@ -8,9 +8,22 @@ public class SceneLoader : MonoBehaviour, IInteractable
 {
     private string scene;
     Animator camAnimator;
+    static float winChance = 0.01f;
+    int sceneCount;
+
 
     private void Start() {
         camAnimator = FindObjectOfType<FirstPersonAIO>().GetComponent<Animator>();
+        sceneCount = SceneManager.sceneCountInBuildSettings;
+    }
+
+    public void OpenDoor(){
+
+        if (Random.value <= winChance) {
+            Debug.Log("You Win!");
+        } else {
+            LoadScene();
+        }
     }
 
     public void setScene(string scene) {
@@ -22,8 +35,13 @@ public class SceneLoader : MonoBehaviour, IInteractable
     }
 
     public void OnInteract() {
-        camAnimator.Play("CameraFade");
-        GetComponent<Animator>().Play("DoorOpen");
 
+        if (camAnimator)
+        {
+            camAnimator.Play("CameraFade");
+            GetComponent<Animator>().Play("DoorOpen");
+        }
+
+        OpenDoor();
     }
 }

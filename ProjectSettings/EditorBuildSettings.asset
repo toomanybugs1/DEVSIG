@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: e9bc56e49824d49438cf92bf940b7be3
   - enabled: 1
-    path: Assets/Scenes/ETouchCar.unity
+    path: Assets/Scenes/HTouchCar.unity
     guid: 5a679b5a8ff5f8849b5f93c14c3d1742
   - enabled: 1
-    path: Assets/Scenes/Hallway.unity
+    path: Assets/Scenes/EHallway.unity
     guid: 705336a720985d64fa9db6508f8e8bc6
   - enabled: 1
     path: Assets/hallwayGenerationTests/gameScenes/Test1.unity
