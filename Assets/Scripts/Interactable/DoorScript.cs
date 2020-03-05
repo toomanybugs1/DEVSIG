@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
   them to events later.
 */
 
-public class DoorScript : MonoBehaviour
+public class StartSceneDoor : MonoBehaviour, IInteractable
 {
     //get number of scenes in the build
     //scene 0 is the main menu, scene 1 is the hallway
@@ -30,5 +30,9 @@ public class DoorScript : MonoBehaviour
         } else {
             SceneManager.LoadScene(Random.Range(2, sceneCount));
         }
+    }
+
+    public void OnInteract() {
+        OpenDoor();
     }
 }
