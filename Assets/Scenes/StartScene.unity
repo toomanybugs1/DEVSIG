@@ -215,6 +215,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &722346188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1743903104223250, guid: 2e62f5703e5f8d2488a5e1bc8433be41,
+    type: 3}
+  m_PrefabInstance: {fileID: 1955191907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &722346194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722346188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89a8381347004f46b713b4daf4ce2e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &722346195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722346188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b6fb841071942b384104602590be2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &797906088
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +276,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorPrefab: {fileID: 445267434464357293, guid: 41929ff19bfa943dab7eb2aebc46f613,
     type: 3}
-  doorAmount: 15
+  scenes:
+  - {fileID: 102900000, guid: 5a679b5a8ff5f8849b5f93c14c3d1742, type: 3}
+  - {fileID: 102900000, guid: 705336a720985d64fa9db6508f8e8bc6, type: 3}
+  - {fileID: 102900000, guid: 41faaed7178204541932924247f5aba0, type: 3}
+  - {fileID: 102900000, guid: 9772d53e622074274ab78bc6aed3d773, type: 3}
 --- !u!4 &797906090
 Transform:
   m_ObjectHideFlags: 0
