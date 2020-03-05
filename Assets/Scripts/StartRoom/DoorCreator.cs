@@ -25,7 +25,7 @@ public class DoorCreator : MonoBehaviour {
 
             SceneAsset scene = scenes[i];
             newInstance.GetComponentInChildren<TMP_Text>().text = scene.name;
-            newInstance.GetComponentInChildren<SceneLoader>().scene = scene.name;
+            newInstance.GetComponentInChildren<SceneLoader>().setScene(scene.name);
         }
     }
 }
