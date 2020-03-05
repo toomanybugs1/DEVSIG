@@ -14,16 +14,14 @@ public class FirstPersonRaycast : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButton(0)) {
-            RaycastHit hit;
             Ray ray = new Ray(cam.transform.position, cam.transform.forward);
 
-            if (Physics.Raycast(ray, out hit)) {
-                Transform objectHit = hit.transform;
-                SceneLoader sceneLoader = hit.transform.GetComponent<SceneLoader>();
+            if (Physics.Raycast(ray, out RaycastHit hit)) {
+                IInteractable interactable = hit.transform.GetComponent<IInteractable>();
 
-                if (sceneLoader) {
-                    sceneLoader.loadScene();
-                }
+                if (interactable == null) {return;}
+
+                interactable.OnInteract();
             }
         }
     }
