@@ -20,7 +20,6 @@ public class FirstPersonRaycast : MonoBehaviour
                 IInteractable interactable = hit.transform.GetComponent<IInteractable>();
 
                 if (interactable == null) {return;}
-                Debug.Log(interactable);
                 interactable.OnInteract();
             }
         }
