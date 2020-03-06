@@ -9,12 +9,10 @@ public class SceneLoader : MonoBehaviour, IInteractable
     private string scene;
     Animator camAnimator;
     static float winChance = 0.01f;
-    int sceneCount;
 
 
     private void Start() {
         camAnimator = FindObjectOfType<FirstPersonAIO>().GetComponent<Animator>();
-        sceneCount = SceneManager.sceneCountInBuildSettings;
     }
 
     public void OpenDoor(){
