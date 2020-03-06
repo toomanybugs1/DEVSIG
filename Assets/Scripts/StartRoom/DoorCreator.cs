@@ -1,20 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using System.IO;
+﻿using UnityEngine;
 using UnityEditor;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class DoorCreator : MonoBehaviour {
     [SerializeField] GameObject doorPrefab;
-    [SerializeField] SceneAsset[] scenes;
+    int sceneCount;
     float radius;
 
     void Start() {
-        int doorAmount = scenes.Length;
+        sceneCount = SceneManager.sceneCountInBuildSettings;
+
+        //doorAmount subtracts 2 because we dont want the menu screen
+        //or the hall as loadable scenes
+        int doorAmount = sceneCount - 2;
         radius = (doorAmount / 2) + 5;
+
+        //list of scene indicies to generate from
+        List<int> sceneNums = new List<int>();
+        for (int i = 2; i < sceneCount; i++)
+            sceneNums.Add(i);
 
         for (int i = 0; i < doorAmount; i++) {
             float angle = (Mathf.PI * 2 / doorAmount) * i;
@@ -23,31 +29,33 @@ public class DoorCreator : MonoBehaviour {
 
             newInstance.transform.LookAt(transform.position);
 
-            SceneAsset scene = scenes[i];
+            //get random scene index, get the scene at the index, then
+            //remove that index from the list
+            int curIndex = Random.Range(0, sceneNums.Count);
+            string curScene = SceneUtility.GetScenePathByBuildIndex(sceneNums[curIndex]);
+            sceneNums.RemoveAt(curIndex);
 
-            //we can keep track of difficulty with the first character of the scene
-            //this way we don't tell the user the name of each scene, just it's difficulty
-            //we will likely replace this with a graphic
-            char diffChar = scene.name[0];
-            string difficulty;
-
-            switch (diffChar) {
+            //assign difficulty above door based on first char of the scene name
+            //will later be changed to a graphic most likely
+            string diffText = " ";
+            switch(curScene[0])
+            {
                 case 'E':
-                    difficulty = "Easy";
+                    diffText = "Easy";
                     break;
                 case 'M':
-                    difficulty = "Medium";
+                    diffText = "Medium";
                     break;
                 case 'H':
-                    difficulty = "Hard";
+                    diffText = "Hard";
                     break;
                 default:
-                    difficulty = "Easy";
+                    diffText = "Easy";
                     break;
             }
 
-            newInstance.GetComponentInChildren<TMP_Text>().text = difficulty;
-            newInstance.GetComponentInChildren<SceneLoader>().setScene(scene.name);
+            newInstance.GetComponentInChildren<TMP_Text>().text = diffText;
+            newInstance.GetComponentInChildren<SceneLoader>().setScene(curScene);
         }
     }
 }
