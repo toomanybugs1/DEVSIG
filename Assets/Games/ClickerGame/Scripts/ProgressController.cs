@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class ProgressController : MonoBehaviour {
     int pixels, score;
@@ -43,9 +44,18 @@ public class ProgressController : MonoBehaviour {
         row.sizeDelta = new Vector2(width, 1);
     }
 
-    public void addMoney(int amount) {
+    public void AddMoney(int amount) {
         score += amount;
         score = Mathf.Clamp(score, 0, pixels);
         UpdateUI();
+    }
+
+    internal void RemoveMoney(int cost) {
+        score -= cost;
+        UpdateUI();
+    }
+
+    public int GetScore() {
+        return score;
     }
 }
