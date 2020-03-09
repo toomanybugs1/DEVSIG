@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ProgressController : MonoBehaviour {
     int pixels, score;
     float progress;
     float pixelHeight;
     int steps;
+
     RectTransform bulk, row;
+    TMP_Text scoreText;
+
     Vector2 size;
 
     // Start is called before the first frame update
@@ -18,8 +22,9 @@ public class ProgressController : MonoBehaviour {
         pixels = Mathf.FloorToInt(size.x * size.y);
         score = 0;
 
-        bulk = transform.GetChild(0).GetComponent<RectTransform>();
-        row = transform.GetChild(1).GetComponent<RectTransform>();
+        bulk = transform.GetChild(1).GetComponent<RectTransform>();
+        row = transform.GetChild(2).GetComponent<RectTransform>();
+        scoreText = GameObject.Find("ScoreText").GetComponent<TMP_Text>();
 
         steps = Mathf.FloorToInt(size.y);
     }
@@ -27,6 +32,9 @@ public class ProgressController : MonoBehaviour {
     // Update is called once per frame
     void UpdateUI() {
         progress =  (float)score / (float)pixels;
+
+        scoreText.SetText("Score:" + score);
+
         float height = pixelHeight * Mathf.Floor(progress * steps) / steps;
         float width = size.x * (progress * steps % 1);
 
@@ -37,6 +45,7 @@ public class ProgressController : MonoBehaviour {
 
     public void addMoney(int amount) {
         score += amount;
+        score = Mathf.Clamp(score, 0, pixels);
         UpdateUI();
     }
 }
