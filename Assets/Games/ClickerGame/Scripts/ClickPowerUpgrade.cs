@@ -3,31 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ClickPowerUpgrade : MonoBehaviour
-{
-    int cost = 10;
-
+public class ClickPowerUpgrade : MonoBehaviour {
     ProgressController progressController;
     TMP_Text text;
-    // Start is called before the first frame update
-    void Start()
-    {
+
+
+    void Start() {
         progressController = FindObjectOfType<ProgressController>();
         text = transform.GetChild(1).GetComponent<TMP_Text>();
     }
 
     public void Clicked() {
-        if (progressController.GetScore() >= cost) {
+        if (progressController.GetScore() >= Upgrades.clickCost) {
 
-            progressController.RemoveMoney(cost);
+            progressController.RemoveMoney(Upgrades.clickCost);
 
             Upgrades.clickPowerLevel++;
             Upgrades.clickPower += Mathf.FloorToInt(Mathf.Pow(Upgrades.clickPowerLevel, 1.05f));
-            cost += Mathf.FloorToInt( Mathf.Pow(Upgrades.clickPowerLevel, 1.25f));
+            Upgrades.clickCost += Mathf.FloorToInt(Mathf.Pow(Upgrades.clickPowerLevel, 1.25f));
 
             string newText = "Level: " + Upgrades.clickPowerLevel;
             newText += "\nPixels/Click: " + Upgrades.clickPower;
-            newText += "\nCost: " + cost;
+            newText += "\nCost: " + Upgrades.clickCost;
             text.SetText(newText);
         }
     }

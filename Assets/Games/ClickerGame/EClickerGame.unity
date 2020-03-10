@@ -278,7 +278,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 26.35
+  m_fontSize: 26.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -473,9 +473,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Level: 1
 
-    Clicks/S: 1
+    Clicks/S: 0
 
-    Cost: 10'
+    Cost: 100'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -503,7 +503,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 14.45
+  m_fontSize: 14.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -544,7 +544,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 418087974}
-    characterCount: 29
+    characterCount: 30
     spriteCount: 0
     spaceCount: 5
     wordCount: 7
@@ -634,7 +634,7 @@ MonoBehaviour:
 
     Pixels/Autoclick: 1
 
-    Cost: 10'
+    Cost: 1000'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -662,7 +662,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 10.8
+  m_fontSize: 10.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -703,7 +703,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 446042747}
-    characterCount: 37
+    characterCount: 39
     spriteCount: 0
     spaceCount: 5
     wordCount: 7
@@ -2586,7 +2586,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1806113468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eead4871f3e34486b5ede1a7a1d0c6c, type: 3}
+  m_Script: {fileID: 11500000, guid: e89f1e16d1d884109ad80d547b5e6af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1806113471
