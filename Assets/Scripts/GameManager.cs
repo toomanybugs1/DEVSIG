@@ -38,6 +38,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //chance of winning the game on door open
+    static private float winChance = 0.01f; 
+
     void Awake()
     {
         if (instance == null)
@@ -52,10 +55,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public static float GetWinChance()
+    {
+        return winChance;
+    }
+
     public static void WinLevel()
     {
         char diffChar = SceneManager.GetActiveScene().name[0];
+
         //use the difficulty to change the win rate
+        switch (diffChar)
+        {
+            case 'H':
+                winChance *= 1.2f;
+                break;
+
+            case 'M':
+                winChance *= 1.1f;
+                break;
+
+            default:
+                break;
+        }
 
         //load the start scene
         SceneManager.LoadScene(1);
