@@ -16,15 +16,13 @@ public class AutoClick : MonoBehaviour {
 
     public void Clicked() {
         if (progressController.GetScore() >= Upgrades.autoClickCost) {
-
             progressController.RemoveMoney(Upgrades.autoClickCost);
 
             Upgrades.autoClickLevel++;
-            Upgrades.autoClickPerSecond = Mathf.FloorToInt(Mathf.Pow(Upgrades.autoClickLevel, 1.05f));
-            Upgrades.autoClickCost += Mathf.FloorToInt(Mathf.Pow(Upgrades.autoClickLevel, 1.25f));
+            Upgrades.autoClickCost += Mathf.FloorToInt(Mathf.Pow(Upgrades.autoClickLevel * 10, 1.3f));
 
             string newText = "Level: " + Upgrades.autoClickLevel;
-            newText += "\nClicks/Sec: " + Upgrades.autoClickPerSecond;
+            newText += "\nClicks/Sec: " + Upgrades.autoClickLevel;
             newText += "\nCost: " + Upgrades.autoClickCost;
 
             text.SetText(newText);
@@ -34,13 +32,10 @@ public class AutoClick : MonoBehaviour {
     }
 
     public void RestartInvoke() {
-        CancelInvoke("autoClick");
-        InvokeRepeating("Click", 0, 1.0f / Upgrades.autoClickPerSecond);
-
+        InvokeRepeating("Click", 0, 1.0f / Upgrades.autoClickLevel);
     }
 
     void Click() {
-        print(Upgrades.autoClickPower);
         progressController.AddMoney(Upgrades.autoClickPower);
     }
 }

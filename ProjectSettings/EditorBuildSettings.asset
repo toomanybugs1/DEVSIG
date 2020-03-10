@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EHallway.unity
     guid: 705336a720985d64fa9db6508f8e8bc6
+  - enabled: 1
+    path: Assets/Games/ClickerGame/EClickerGame.unity
+    guid: 677ecbdc0648642f6a3e91e312764c12
   m_configObjects: {}
