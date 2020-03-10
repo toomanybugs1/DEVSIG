@@ -8,15 +8,14 @@ public class SceneLoader : MonoBehaviour, IInteractable
 {
     public string scene;
     Animator camAnimator;
-    static float winChance = 0.01f;
 
     private void Start() {
-        camAnimator = FindObjectOfType<FirstPersonAIO>().GetComponent<Animator>();
+        camAnimator = GameObject.Find("FadeToBlackPanel").GetComponent<Animator>();
     }
 
     public void OpenDoor(){
 
-        if (Random.value <= winChance) {
+        if (Random.value <= GameManager.GetWinChance()) {
             Debug.Log("You Win!");
         } else {
             LoadScene();
@@ -39,6 +38,6 @@ public class SceneLoader : MonoBehaviour, IInteractable
             GetComponent<Animator>().Play("DoorOpen");
         }
 
-        OpenDoor();
+        //OpenDoor();
     }
 }
