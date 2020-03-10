@@ -23,8 +23,8 @@ public class ProgressController : MonoBehaviour {
         pixels = Mathf.FloorToInt(size.x * size.y);
         score = 0;
 
-        bulk = transform.GetChild(1).GetComponent<RectTransform>();
-        row = transform.GetChild(2).GetComponent<RectTransform>();
+        bulk = transform.GetChild(2).GetComponent<RectTransform>();
+        row = transform.GetChild(3).GetComponent<RectTransform>();
         scoreText = GameObject.Find("ScoreText").GetComponent<TMP_Text>();
 
         steps = Mathf.FloorToInt(size.y);
