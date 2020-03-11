@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float moveSpeed = 10;
-    public float rotateSpeed = 4;
+    public float moveSpeed;
+    public float rotateSpeed;
 
     // Update is called once per frame
     void Update()
@@ -25,11 +25,11 @@ public class Movement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(-Vector3.up * rotateSpeed);
+            transform.Rotate(-Vector3.up * rotateSpeed * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(Vector3.up * rotateSpeed);
+            transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
         }
     }
 
