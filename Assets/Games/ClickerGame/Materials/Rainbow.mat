@@ -72,7 +72,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 10
-    - _Spread: 800
+    - _Spread: 600
     - _SrcBlend: 1
     - _TimeOffset: 0
     - _UVSec: 0
