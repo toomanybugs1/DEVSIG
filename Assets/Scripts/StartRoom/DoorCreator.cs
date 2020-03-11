@@ -35,10 +35,14 @@ public class DoorCreator : MonoBehaviour {
             string curScene = SceneUtility.GetScenePathByBuildIndex(sceneNums[curIndex]);
             sceneNums.RemoveAt(curIndex);
 
+            //gets the last slash in the path so we can grab the first character in
+            //the scene name
+            int lastPathSlash = curScene.LastIndexOf('/');
+
             //assign difficulty above door based on first char of the scene name
             //will later be changed to a graphic most likely
             string diffText = " ";
-            switch(curScene[0])
+            switch(curScene[lastPathSlash + 1])
             {
                 case 'E':
                     diffText = "Easy";

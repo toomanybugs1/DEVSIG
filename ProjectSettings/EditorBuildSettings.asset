@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: e9bc56e49824d49438cf92bf940b7be3
   - enabled: 1
-    path: Assets/Scenes/ETouchCar.unity
+    path: Assets/Games/TouchCar/ETouchCar.unity
     guid: 5a679b5a8ff5f8849b5f93c14c3d1742
   - enabled: 1
     path: Assets/Scenes/EHallway.unity
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Games/ClickerGame/EClickerGame.unity
     guid: 677ecbdc0648642f6a3e91e312764c12
+  - enabled: 1
+    path: Assets/Games/RunAway/MRunAway.unity
+    guid: c7916c82a764c496c8b1b4ce32d681c4
   m_configObjects: {}
