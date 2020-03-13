@@ -26,7 +26,7 @@ public class ShootScript : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit)) {
             gun.transform.LookAt(hit.point);
-            if (Input.GetMouseButton(0)) {
+            if (Input.GetMouseButtonDown(0)) {
                 fire(hit.point);
             }
         }
