@@ -7,9 +7,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] List<WaveSO> waves;
     List<Transform> spawnPoints;
-    int spawnPointCount;
-    int waveNumber;
-    int enemyCount;
+    int spawnPointCount, waveNumber;
+    public static int enemyCount;
 
     // Start is called before the first frame update
     void Start()

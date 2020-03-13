@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShootScript : MonoBehaviour
 {
     [SerializeField] GameObject gun, shootPoint;
+    [SerializeField] int damage = 10;
     Animator gunAnimator, lineAnimator;
     LineRenderer lr;
     Camera cam;
@@ -27,6 +28,10 @@ public class ShootScript : MonoBehaviour
         if (Physics.Raycast(ray, out hit)) {
             gun.transform.LookAt(hit.point);
             if (Input.GetMouseButtonDown(0)) {
+                CrabController enemy = hit.transform.GetComponent<CrabController>();
+                if (enemy) {
+                    enemy.Damage(damage);
+                }
                 fire(hit.point);
             }
         }
