@@ -35,5 +35,7 @@ public class ShootScript : MonoBehaviour
     void fire(Vector3 hitPoint) {
         lr.SetPosition(0, shootPoint.transform.position);
         lr.SetPosition(1, hitPoint);
+        lineAnimator.Play("SmokeShootAnim");
+        gunAnimator.Play("ShootAnim");
     }
 }
