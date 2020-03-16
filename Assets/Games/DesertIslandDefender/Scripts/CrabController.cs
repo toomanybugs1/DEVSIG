@@ -7,13 +7,18 @@ public class CrabController : MonoBehaviour
 {
     Transform goal;
     NavMeshAgent agent;
-    int health;
+    [SerializeField] int health = 100;
+    int fullHealth;
+
+
+    RectTransform healthBar;
 
     void Start() {
         goal = FindObjectOfType<FirstPersonAIO>().transform;
         agent = GetComponent<NavMeshAgent>();
+        healthBar = GetComponentInChildren<HealthBar>().GetComponent<RectTransform>();
 
-        health = 100;
+        fullHealth = health;
     }
 
     public void Damage(int amount) {
@@ -23,6 +28,8 @@ public class CrabController : MonoBehaviour
             EnemySpawner.enemyCount--;
             Destroy(gameObject);
         }
+
+        healthBar.sizeDelta = new Vector2(((float)health / fullHealth) * 10f, 1f);
     }
 
     private void Update() {
