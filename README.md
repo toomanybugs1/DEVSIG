@@ -1,6 +1,7 @@
 # DEVSIG
 
-Welcome to the repository for our special interest group. Here is where our entire project will be stored. You must be added to the project before you can make any changes!
+# UPDATE
+We are now using the private Gitea server for the project. This is due to the LFS requirements of the Unity project. You can find the link to the server on our Slack channel.
 
 ## Getting Started
 Once you're on the project, you will need to install Unity 2019.3.3f1. Then you will need to clone this repository into your Unity projects folder. In the Unity hub, select Add Project and select the file generated from the clone.
